@@ -20,7 +20,7 @@ public abstract class Account {
         this.accountNumber = setAccountNumber();
     }
 
-    // Create card number
+    // Create user account number
     private String setAccountNumber() {
         String firstThreeOfZipCode = zipCode.substring(0, 3);
         return accountIndex + firstThreeOfZipCode;
