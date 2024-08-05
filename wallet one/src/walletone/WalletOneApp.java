@@ -6,30 +6,55 @@ public class WalletOneApp {
 
     public static void main(String[] args) {
 
-        Card card = new Card("Jane Doe", "22102");
-        card.showCardInfo();
-
-        // Read user input, create new cards based on user input
         Scanner scanner = new Scanner(System.in);
-        String fullName;
-        String zipCode;
 
-        System.out.println("Enter your full name: ");
-        fullName = scanner.nextLine();
+        Card card = new Card("Jane Doe", "22102");
+        card.addCardUser("Jane Doe", "22102");
 
-        System.out.println("Enter your ZIP code: ");
-        zipCode = scanner.next();
+        // Display menu of options
+        while (true) {
+            System.out.println("Select your option by pressing 1, 2, 3, 4 or 9");
+            System.out.println("1. Display Card Details" +
+                    "\n2. Display Card Users" +
+                    "\n3. Add Another Card" +
+                    "\n4. Add Card User" +
+                    "\n9. Exit");
+            System.out.println("Your selection: ");
 
-        Card userCard = new Card(fullName, zipCode);
-        userCard.showCardInfo();
+            int optionNum = scanner.nextInt();
+            System.out.println("You selected " + optionNum);
 
-        System.out.println("Regenerate your card number? (Y for yes)");
-        String userAnswer;
-        userAnswer = scanner.next();
+            switch (optionNum) {
+                case 1:
+                    card.showCardInfo();
+                    break;
+                case 2:
+                    card.showCardUsers();
+                    break;
+                case 3:
+                    card.generateCardNumber();
+                    card.showCardInfo();
+                    break;
+                case 4:
+                    System.out.println("Enter another user's full name: ");
+                    Scanner newUserScanner = new Scanner(System.in);
+                    String newCardUser = newUserScanner.nextLine();
 
-        if (userAnswer.equals("Y") | userAnswer.equals("y")) {
-            Card newUserCard = new Card(fullName, zipCode);
-            newUserCard.showCardInfo();
+                    System.out.println("Enter another user's ZIP code: ");
+                    Scanner newZipScanner = new Scanner(System.in);
+                    String newZipCode = newZipScanner.nextLine();
+
+                    card.addCardUser(newCardUser, newZipCode);
+
+                    System.out.println("Card users associated with this card: " + card.getCardUsers());
+                    break;
+                case 9:
+                    System.out.println("Exiting now. Thank you for using Wallet One.");
+                    return;
+                default:
+                    System.out.println("Invalid option. Please select the correct option.");
+            }
+
         }
 
     }
