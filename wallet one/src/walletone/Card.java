@@ -2,12 +2,30 @@ package walletone;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Card extends Account {
+    private final List<String> cardUsers;
 
     // Constructor to initialize virtual card properties
     public Card(String fullName, String zipCode) {
         super(fullName, zipCode);
+        this.cardUsers = new ArrayList<>();
+    }
+
+    // Getters and setters
+    public void addCardUser(String user) {
+        cardUsers.add(user);
+    }
+
+    public List<String> getCardUsers() {
+        return cardUsers;
+    }
+
+    @Override
+    public String toString() {
+        return "Full name: " + fullName + "\nZip code: " + zipCode + "\nCard users: " + cardUsers;
     }
 
     // List any methods specific to virtual cards
@@ -39,11 +57,25 @@ public class Card extends Account {
         return cVV;
     }
 
+    // Show card users
+    public void showCardUsers() {
+        if (cardUsers.isEmpty()) {
+            System.out.println("No card users associated with this card.");
+        } else {
+            System.out.println("Card users associated with this card:");
+            for (String cardUser : cardUsers) {
+                System.out.println(cardUser);
+            }
+        }
+    }
+
+    // Show card info method
     public void showCardInfo() {
         super.showCardInfo();
         System.out.println("Card number: " + generateCardNumber());
         System.out.println("Expiration date: " + generateExpirationDate());
         System.out.println("CVV: " + generateCvv());
+        System.out.println("Card users: " + cardUsers);
     }
 
 }
