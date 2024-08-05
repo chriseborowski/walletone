@@ -20,6 +20,15 @@ public abstract class Account {
         this.accountNumber = setAccountNumber();
     }
 
+    // Getters and setters
+    private String getFullName() {
+        return fullName;
+    }
+
+    private String getZipCode() {
+        return zipCode;
+    }
+
     // Create user account number
     private String setAccountNumber() {
         String firstThreeOfZipCode = zipCode.substring(0, 3);
@@ -28,8 +37,8 @@ public abstract class Account {
 
     // List common methods
     public void showCardInfo() {
-        System.out.println("Full name: " + fullName);
-        System.out.println("ZIP code: " + zipCode);
+        System.out.println("Full name: " + getFullName());
+        System.out.println("ZIP code: " + getZipCode());
         System.out.println("Account number: " + this.accountNumber);
     }
 
