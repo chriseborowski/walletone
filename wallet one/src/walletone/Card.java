@@ -15,7 +15,7 @@ public class Card extends Account {
     }
 
     // Getters and setters
-    public void addCardUser(String user) {
+    public void addCardUser(String user, String zipCode) {
         cardUsers.add(user);
     }
 
@@ -75,7 +75,7 @@ public class Card extends Account {
         System.out.println("Card number: " + generateCardNumber());
         System.out.println("Expiration date: " + generateExpirationDate());
         System.out.println("CVV: " + generateCvv());
-        System.out.println("Card users: " + cardUsers);
+        showCardUsers();
     }
 
 }
