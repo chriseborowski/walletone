@@ -39,4 +39,7 @@ public class CardManager {
         return null;
     }
 
+    public List<Card> getCards() {
+        return cards;
+    }
 }
