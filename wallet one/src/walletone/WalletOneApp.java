@@ -39,7 +39,16 @@ public class WalletOneApp {
                     }
                     break;
                 case 2:
-//                    cardManager.showCardUsers();
+                    System.out.println("Enter the card number to display all users: ");
+                    String cardNumberAllUsers = scanner.nextLine();
+                    Card cardNumberUsers = cardManager.findCardByNumber(cardNumberAllUsers);
+
+                    if (cardNumberUsers != null) {
+                        cardNumberUsers.showCardUsers();
+                    }
+                    else {
+                        System.out.println("Card not found.");
+                    }
                     break;
                 case 3:
 //                    cardManager.generateCardNumber();
