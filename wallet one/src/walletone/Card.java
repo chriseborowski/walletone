@@ -7,14 +7,20 @@ import java.util.List;
 
 public class Card extends Account {
     private final List<String> cardUsers;
+    private final String cardNumber;
 
     // Constructor to initialize virtual card properties
     public Card(String fullName, String zipCode) {
         super(fullName, zipCode);
         this.cardUsers = new ArrayList<>();
+        this.cardNumber = generateCardNumber();
     }
 
     // Getters and setters
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
     public void addCardUser(String user, String zipCode) {
         cardUsers.add(user);
     }
