@@ -9,7 +9,6 @@ public class WalletOneApp {
         Scanner scanner = new Scanner(System.in);
         CardManager cardManager = new CardManager();
 
-//        Card card = new Card("Jane Doe", "22102");
         cardManager.addNewCard("Jane Doe", "22102");
 
         // Display menu of options
@@ -59,7 +58,6 @@ public class WalletOneApp {
                     cardManager.addNewCard(name, zip);
                     System.out.println("Success! New card was added.");
                     System.out.println("----------");
-//                    cardManager.generateCardNumber();
                     break;
                 case 4:
                     System.out.println("Enter the card number to add a user: ");
