@@ -12,6 +12,7 @@ public class CardManager {
 
     public void addNewCard(String fullName, String zipCode) {
         Card newCard = new Card(fullName, zipCode);
+        newCard.generateCardNumber();
         cards.add(newCard);
         System.out.println("Success! New credit card added.");
     }
