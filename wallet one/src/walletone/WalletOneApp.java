@@ -7,9 +7,10 @@ public class WalletOneApp {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        CardManager cardManager = new CardManager();
 
-        Card card = new Card("Jane Doe", "22102");
-        card.addCardUser("Jane Doe", "22102");
+//        Card card = new Card("Jane Doe", "22102");
+        cardManager.addNewCard("Jane Doe", "22102");
 
         // Display menu of options
         while (true) {
@@ -26,14 +27,23 @@ public class WalletOneApp {
 
             switch (optionNum) {
                 case 1:
-                    card.showCardInfo();
+                    System.out.println("Enter the card number to display details (no spaces):");
+                    String cardNumber = scanner.nextLine();
+                    Card card = cardManager.findCardByNumber();
+
+                    if (card != null) {
+                        card.showCardInfo();
+                    }
+                    else {
+                        System.out.println("Card not found.");
+                    }
                     break;
                 case 2:
-                    card.showCardUsers();
+                    cardManager.showCardUsers();
                     break;
                 case 3:
-                    card.generateCardNumber();
-                    card.showCardInfo();
+                    cardManager.generateCardNumber();
+                    cardManager.showCardInfo();
                     break;
                 case 4:
                     System.out.println("Enter another user's full name: ");
@@ -44,9 +54,9 @@ public class WalletOneApp {
                     Scanner newZipScanner = new Scanner(System.in);
                     String newZipCode = newZipScanner.nextLine();
 
-                    card.addCardUser(newCardUser, newZipCode);
+                    cardManager.addCardUser(newCardUser, newZipCode);
 
-                    System.out.println("Card users associated with this card: " + card.getCardUsers());
+                    System.out.println("Card users associated with this card: " + cardManager.getCardUsers());
                     break;
                 case 9:
                     System.out.println("Exiting now. Thank you for using Wallet One.");
