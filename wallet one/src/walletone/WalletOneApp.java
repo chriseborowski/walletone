@@ -61,17 +61,21 @@ public class WalletOneApp {
 //                    cardManager.generateCardNumber();
                     break;
                 case 4:
-                    System.out.println("Enter another user's full name: ");
-                    Scanner newUserScanner = new Scanner(System.in);
-                    String newCardUser = newUserScanner.nextLine();
+                    System.out.println("Enter the card number to add a user: ");
+                    String cardNumberForUser = scanner.nextLine();
+                    Card cardForUser = cardManager.findCardByNumber(cardNumberForUser);
+                    if (cardForUser != null) {
+                        System.out.println("Enter another user's full name: ");
+                        String newCardUser = scanner.nextLine();
+                        System.out.println("Enter another user's ZIP code: ");
+                        String newZipCode = scanner.nextLine();
 
-                    System.out.println("Enter another user's ZIP code: ");
-                    Scanner newZipScanner = new Scanner(System.in);
-                    String newZipCode = newZipScanner.nextLine();
-
-//                    cardManager.addCardUser(newCardUser, newZipCode);
-
-//                    System.out.println("Card users associated with this card: " + cardManager.getCardUsers());
+                        cardForUser.addCardUser(newCardUser, newZipCode);
+                        System.out.println("Card users associated with this card: " + cardForUser.getCardUsers());
+                    }
+                    else {
+                        System.out.println("Card not found.");
+                    }
                     break;
                 case 9:
                     System.out.println("Exiting now. Thank you for using Wallet One.");
