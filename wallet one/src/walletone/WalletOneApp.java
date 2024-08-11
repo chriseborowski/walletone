@@ -19,6 +19,7 @@ public class WalletOneApp {
                     "\n2. Display Card Users" +
                     "\n3. Add Another Card" +
                     "\n4. Add Card User" +
+                    "\n5. Show All Cards" +
                     "\n9. Exit");
             System.out.println("Your selection: ");
 
@@ -76,6 +77,9 @@ public class WalletOneApp {
                     else {
                         System.out.println("Card not found.");
                     }
+                    break;
+                case 5:
+                    cardManager.showAllCards();
                     break;
                 case 9:
                     System.out.println("Exiting now. Thank you for using Wallet One.");
