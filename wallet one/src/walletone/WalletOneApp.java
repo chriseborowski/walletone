@@ -29,7 +29,7 @@ public class WalletOneApp {
                 case 1:
                     System.out.println("Enter the card number to display details (no spaces):");
                     String cardNumber = scanner.nextLine();
-                    Card card = cardManager.findCardByNumber();
+                    Card card = cardManager.findCardByNumber(cardNumber);
 
                     if (card != null) {
                         card.showCardInfo();
@@ -39,11 +39,11 @@ public class WalletOneApp {
                     }
                     break;
                 case 2:
-                    cardManager.showCardUsers();
+//                    cardManager.showCardUsers();
                     break;
                 case 3:
-                    cardManager.generateCardNumber();
-                    cardManager.showCardInfo();
+//                    cardManager.generateCardNumber();
+//                    cardManager.showCardInfo();
                     break;
                 case 4:
                     System.out.println("Enter another user's full name: ");
@@ -54,9 +54,9 @@ public class WalletOneApp {
                     Scanner newZipScanner = new Scanner(System.in);
                     String newZipCode = newZipScanner.nextLine();
 
-                    cardManager.addCardUser(newCardUser, newZipCode);
+//                    cardManager.addCardUser(newCardUser, newZipCode);
 
-                    System.out.println("Card users associated with this card: " + cardManager.getCardUsers());
+//                    System.out.println("Card users associated with this card: " + cardManager.getCardUsers());
                     break;
                 case 9:
                     System.out.println("Exiting now. Thank you for using Wallet One.");
