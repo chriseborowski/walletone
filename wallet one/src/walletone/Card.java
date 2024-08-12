@@ -78,7 +78,7 @@ public class Card extends Account {
     // Show card info method
     public void showCardInfo() {
         super.showCardInfo();
-        System.out.println("Card number: " + generateCardNumber());
+        System.out.println("Card number: " + getCardNumber());
         System.out.println("Expiration date: " + generateExpirationDate());
         System.out.println("CVV: " + generateCvv());
         showCardUsers();
