@@ -18,7 +18,7 @@ public class Card extends Account {
 
     // Getters and setters
     public String getCardNumber() {
-        return cardNumber;
+        return cardNumber.replaceAll("\\s|-", "");
     }
 
     public void addCardUser(String user, String zipCode) {
