@@ -10,11 +10,13 @@ public class CardManager {
         this.cards = new ArrayList<>();
     }
 
-    public void addNewCard(String fullName, String zipCode) {
+    public Card addNewCard(String fullName, String zipCode) {
         Card newCard = new Card(fullName, zipCode);
         newCard.generateCardNumber();
+        newCard.addCardUser(fullName, zipCode);
         cards.add(newCard);
         System.out.println("Success! New credit card added.");
+        return newCard;
     }
 
     public void showAllCards() {
