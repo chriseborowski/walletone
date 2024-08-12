@@ -56,7 +56,7 @@ public class WalletOneApp {
                     String name = scanner.nextLine();
                     System.out.println("Enter the card user's ZIP code: ");
                     String zip = scanner.nextLine();
-                    cardManager.addNewCard(name, zip);
+                    Card newCard = cardManager.addNewCard(name, zip);
                     System.out.println("----------");
                     cardManager.showAllCards();
                     break;
