@@ -23,6 +23,7 @@ public class WalletOneApp {
             System.out.println("Your selection: ");
 
             int optionNum = scanner.nextInt();
+            scanner.nextLine(); // Extra scanner line to consume leftover newline
             System.out.println("You selected " + optionNum);
 
             switch (optionNum) {
