@@ -38,12 +38,7 @@ public class CardManager {
     }
 
     public Card findCardByNumber(String cardNumber) {
-        for (Card card : cards) {
-            if (card.getCardNumber().equals(cardNumber)) {
-                return card;
-            }
-        }
-        return null;
+        return cardHashMap.get(cardNumber);
     }
 
     public List<Card> getCards() {
