@@ -19,7 +19,8 @@ public class CardManager {
         newCard.addCardUser(fullName, zipCode);
         cards.add(newCard);
         cardHashMap.put(newCard.getCardNumber(), newCard);
-        System.out.println("Success! New credit card added.");
+        System.out.println("Success! New credit card added.\nCard details:\n");
+        newCard.showCardInfo();
         return newCard;
     }
 
