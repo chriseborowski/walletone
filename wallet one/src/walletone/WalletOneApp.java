@@ -24,11 +24,11 @@ public class WalletOneApp {
 
             int optionNum = scanner.nextInt();
             scanner.nextLine(); // Extra scanner line to consume leftover newline
-            System.out.println("You selected " + optionNum);
 
             switch (optionNum) {
                 case 1:
-                    System.out.println("Enter the card number to display details (no spaces):");
+                    System.out.println("You selected to display card details.");
+                    System.out.println("Enter the card number (no spaces):");
                     String cardNumber = scanner.nextLine();
                     Card card = cardManager.findCardByNumber(cardNumber);
 
@@ -40,7 +40,8 @@ public class WalletOneApp {
                     }
                     break;
                 case 2:
-                    System.out.println("Enter the card number to display all users: ");
+                    System.out.println("You selected to display all card users.");
+                    System.out.println("Enter the card number (no spaces):");
                     String cardNumberAllUsers = scanner.nextLine();
                     Card cardNumberUsers = cardManager.findCardByNumber(cardNumberAllUsers);
 
@@ -52,15 +53,17 @@ public class WalletOneApp {
                     }
                     break;
                 case 3:
-                    System.out.println("Enter the card user's full name: ");
+                    System.out.println("You selected to add a new card.");
+                    System.out.println("Enter the full name of the user associated with this card: ");
                     String name = scanner.nextLine();
-                    System.out.println("Enter the card user's ZIP code: ");
+                    System.out.println("Enter the user's ZIP code: ");
                     String zip = scanner.nextLine();
                     Card newCard = cardManager.addNewCard(name, zip);
                     System.out.println("----------");
                     newCard.showCardInfo();
                     break;
                 case 4:
+                    System.out.println("You selected to add a new card user.");
                     System.out.println("Enter the card number to add a user: ");
                     String cardNumberForUser = scanner.nextLine();
                     Card cardForUser = cardManager.findCardByNumber(cardNumberForUser);
@@ -78,6 +81,7 @@ public class WalletOneApp {
                     }
                     break;
                 case 5:
+                    System.out.println("You selected to display all existing cards.\n");
                     cardManager.showAllCards();
                     break;
                 case 9:
