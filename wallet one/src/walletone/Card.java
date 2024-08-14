@@ -8,12 +8,14 @@ import java.util.List;
 public class Card extends Account {
     private final List<String> cardUsers;
     private final String cardNumber;
+    private final int cvv;
 
     // Constructor to initialize virtual card properties
     public Card(String fullName, String zipCode) {
         super(fullName, zipCode);
         this.cardUsers = new ArrayList<>();
         this.cardNumber = generateCardNumber();
+        this.cvv = generateCvv();
     }
 
     // Getters and setters
@@ -63,6 +65,11 @@ public class Card extends Account {
         return cVV;
     }
 
+    // CVV getter
+    public int getCvv() {
+        return cvv;
+    }
+
     // Show card users
     public void showCardUsers() {
         if (cardUsers.isEmpty()) {
@@ -80,7 +87,7 @@ public class Card extends Account {
         super.showCardInfo();
         System.out.println("Card number: " + getCardNumber());
         System.out.println("Expiration date: " + generateExpirationDate());
-        System.out.println("CVV: " + generateCvv());
+        System.out.println("CVV: " + cvv);
         showCardUsers();
     }
 
