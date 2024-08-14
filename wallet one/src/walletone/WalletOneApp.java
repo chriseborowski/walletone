@@ -20,7 +20,7 @@ public class WalletOneApp {
                     "\n4. Add Card User" +
                     "\n5. Show All Cards" +
                     "\n9. Exit");
-            System.out.println("Your selection: ");
+            System.out.print("Your selection: ");
 
             int optionNum = scanner.nextInt();
             scanner.nextLine(); // Extra scanner line to consume leftover newline
