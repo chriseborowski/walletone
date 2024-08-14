@@ -60,9 +60,7 @@ public class Card extends Account {
 
     // Generate 3-digit CVV
     public int generateCvv() {
-        int cVV;
-        cVV = (int) (Math.random() * 1000);
-        return cVV;
+        return 100 + (int) (Math.random() * 900);
     }
 
     // CVV getter
