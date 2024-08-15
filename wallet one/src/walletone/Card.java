@@ -73,10 +73,11 @@ public class Card extends Account {
         if (cardUsers.isEmpty()) {
             System.out.println("No card users associated with this card.");
         } else {
-            System.out.println("Card users associated with this card:");
-            for (String cardUser : cardUsers) {
-                System.out.println(cardUser);
+            System.out.println("Card users associated with this card: ");
+            for (int i = 0; i < cardUsers.size(); ++i) {
+                System.out.println((i + 1) + ". " + cardUsers.get(i));
             }
+            System.out.println();
         }
     }
 
