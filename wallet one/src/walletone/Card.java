@@ -84,8 +84,8 @@ public class Card extends Account {
             System.out.println("No card users associated with this card.");
         } else {
             System.out.println("Card users associated with this card: ");
-            for (int i = 0; i < cardUsers.size(); ++i) {
-                System.out.println((i + 1) + ". " + cardUsers.get(i));
+            for (int j = 0; j < cardUsers.size(); ++j) {
+                System.out.println((j + 1) + ". " + cardUsers.get(j));
             }
         }
     }
