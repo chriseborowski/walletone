@@ -77,7 +77,6 @@ public class Card extends Account {
             for (int i = 0; i < cardUsers.size(); ++i) {
                 System.out.println((i + 1) + ". " + cardUsers.get(i));
             }
-            System.out.println();
         }
     }
 
