@@ -18,13 +18,23 @@ public class Card extends Account {
         this.cvv = generateCvv();
     }
 
+    public void addCardUser(String user, String zipCode) {
+        cardUsers.add(user);
+    }
+
+    public boolean removeCardUser(String fullName) {
+        for (int i = 0; i < cardUsers.size(); ++i) {
+            if (cardUsers.get(i).equals(fullName)) {
+                cardUsers.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
     // Getters and setters
     public String getCardNumber() {
         return cardNumber.replaceAll("\\s|-", "");
-    }
-
-    public void addCardUser(String user, String zipCode) {
-        cardUsers.add(user);
     }
 
     public List<String> getCardUsers() {
