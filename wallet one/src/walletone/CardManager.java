@@ -43,7 +43,6 @@ public class CardManager {
 
             for (Card card : cards) {
                 card.showCardInfo();
-                System.out.println("----------");
             }
         }
     }
