@@ -13,7 +13,7 @@ public class WalletOneApp {
 
         // Display menu of options
         while (true) {
-            System.out.println("Select your option by pressing 1, 2, 3, 4, 5 or 9");
+            System.out.println("\nSelect your option by pressing 1, 2, 3, 4, 5 or 9");
             System.out.println("1. Display Card Details" +
                     "\n2. Display Card Users" +
                     "\n3. Add Another Card" +
