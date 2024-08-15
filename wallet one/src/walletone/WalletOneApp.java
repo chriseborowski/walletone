@@ -74,7 +74,8 @@ public class WalletOneApp {
                         String newZipCode = scanner.nextLine();
 
                         cardForUser.addCardUser(newCardUser, newZipCode);
-                        System.out.println("Card users associated with this card: " + cardForUser.getCardUsers());
+//                        System.out.println("Card users associated with this card: ");
+                        cardForUser.showCardUsers();
                     }
                     else {
                         System.out.println("Card not found.");
