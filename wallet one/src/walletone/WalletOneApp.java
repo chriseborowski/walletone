@@ -81,8 +81,20 @@ public class WalletOneApp {
                     }
                     break;
                 case 5:
-                    System.out.println("You selected to display all existing cards.\n");
+                    System.out.println("You selected to display all existing cards.");
                     cardManager.showAllCards();
+                    break;
+                case 6:
+                    System.out.println("You selected to remove a card.\nEnter the card number to remove (no spaces): ");
+                    String cardNumberToRemove = scanner.nextLine();
+                    boolean removedCard = cardManager.removeCard(cardNumberToRemove);
+
+                    if (removedCard) {
+                        System.out.println("Card successfully removed.");
+                    }
+                    else {
+                        System.out.println("Card not found.");
+                    }
                     break;
                 case 9:
                     System.out.println("Exiting now. Thank you for using Wallet One.");
