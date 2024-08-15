@@ -20,6 +20,7 @@ public class WalletOneApp {
                     "\n4. Add Card User" +
                     "\n5. Show All Cards" +
                     "\n6. Remove Card" +
+                    "\n7. Remove Card User" +
                     "\n9. Exit");
             System.out.print("Your selection: ");
 
