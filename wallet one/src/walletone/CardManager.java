@@ -24,6 +24,16 @@ public class CardManager {
         return newCard;
     }
 
+    public boolean removeCard(String cardNumber) {
+        Card cardToRemove = findCardByNumber(cardNumber);
+        if (cardToRemove != null) {
+            cards.remove(cardToRemove);
+            cardHashMap.remove(cardNumber);
+            return true;
+        }
+        return false;
+    }
+
     public void showAllCards() {
         if (cards.isEmpty()) {
             System.out.println("No credit cards to display.");
