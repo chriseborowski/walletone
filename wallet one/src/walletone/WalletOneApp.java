@@ -97,6 +97,23 @@ public class WalletOneApp {
                         System.out.println("Card not found.");
                     }
                     break;
+                case 7:
+                    System.out.println("You selected to remove a user.\nEnter the associated card number (no spaces): ");
+                    String cardNumberForUserRemoval = scanner.nextLine();
+                    Card cardForUserRemoval = cardManager.findCardByNumber(cardNumberForUserRemoval);
+                    if (cardForUserRemoval != null) {
+                        System.out.println("Enter the full name of the user to remove: ");
+                        String userToRemove = scanner.nextLine();
+                        boolean removedUser = cardForUserRemoval.removeCardUser(userToRemove);
+
+                        if (removedUser) {
+                            System.out.println("User successfully removed.");
+                        }
+                        else {
+                            System.out.println("User not found.");
+                        }
+                    }
+                    break;
                 case 9:
                     System.out.println("Exiting now. Thank you for using Wallet One.");
                     return;
