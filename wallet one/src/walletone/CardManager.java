@@ -7,6 +7,7 @@ import java.util.List;
 public class CardManager {
     private final List<Card> cards;
     private final HashMap<String, Card> cardHashMap;
+    private final HashMap<String, List<User>> nameHashMap = new HashMap<>();
     private final HashMap<String, List<User>> zipHashMap = new HashMap<>();
 
     public CardManager() {
@@ -22,6 +23,7 @@ public class CardManager {
 
         cardHashMap.put(newCard.getCardNumber(), newCard);
         User user = new User(fullName, zipCode);
+        nameHashMap.computeIfAbsent(fullName, k -> new ArrayList<>()).add(user);
         zipHashMap.computeIfAbsent(zipCode, k -> new ArrayList<>()).add(user);
 
         System.out.println("Success! New credit card added.\nCard details:\n");
