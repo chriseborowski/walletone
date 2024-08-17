@@ -39,6 +39,18 @@ public class CardManager {
         return false;
     }
 
+    private void removeUserFromZipHashMap(Card card) {
+        String zipCode = card.getZipCode();
+        List<User> users = zipHashMap.get(zipCode);
+
+        if (users != null) {
+            users.removeIf(user -> user.getName().equals(card.getFullName()));
+            if (users.isEmpty()) {
+                zipHashMap.remove(zipCode);
+            }
+        }
+    }
+
     public void showAllCards() {
         if (cards.isEmpty()) {
             System.out.println("No credit cards to display.");
