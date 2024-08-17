@@ -1,5 +1,6 @@
 package walletone;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class WalletOneApp {
@@ -112,6 +113,21 @@ public class WalletOneApp {
                         }
                         else {
                             System.out.println("User not found.");
+                        }
+                    }
+                    break;
+                case 8:
+                    System.out.println("You selected to search cards by ZIP code.\nEnter the ZIP code you are looking for:");
+                    String zipCode = scanner.nextLine();
+                    List<User> usersByZip = cardManager.searchByZip(zipCode);
+
+                    if (usersByZip.isEmpty()) {
+                        System.out.println("No card users found with ZIP code " + zipCode);
+                    }
+                    else {
+                        System.out.println("Card users found with ZIP code " + zipCode + ":");
+                        for (User user : usersByZip) {
+                            System.out.println("Name: " + (user != null ? user.getName() : ""));
                         }
                     }
                     break;
