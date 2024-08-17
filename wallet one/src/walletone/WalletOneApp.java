@@ -23,7 +23,8 @@ public class WalletOneApp {
                     "\n6. Remove Card" +
                     "\n7. Remove Card User" +
                     "\n8. Search Cards By ZIP Code" +
-                    "\n9. Exit");
+                    "\n9. Search Cards By Name" +
+                    "\n0. Exit");
             System.out.print("Your selection: ");
 
             int optionNum = scanner.nextInt();
