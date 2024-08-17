@@ -7,6 +7,7 @@ import java.util.List;
 public class CardManager {
     private final List<Card> cards;
     private final HashMap<String, Card> cardHashMap;
+    private final HashMap<String, List<User>> zipHashMap = new HashMap<>();
 
     public CardManager() {
         this.cards = new ArrayList<>();
@@ -54,4 +55,9 @@ public class CardManager {
     public List<Card> getCards() {
         return cards;
     }
+
+    public List<List<User>> searchByZip(String zipCode) {
+        return zipHashMap.get(zipCode) != null ? List.of(zipHashMap.get(zipCode)) : new ArrayList<>();
+    }
+
 }
