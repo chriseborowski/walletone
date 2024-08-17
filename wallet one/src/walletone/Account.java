@@ -25,7 +25,7 @@ public abstract class Account {
         return fullName;
     }
 
-    private String getZipCode() {
+    String getZipCode() {
         return zipCode;
     }
 
