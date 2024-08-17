@@ -34,6 +34,7 @@ public class CardManager {
         if (cardToRemove != null) {
             cards.remove(cardToRemove);
             cardHashMap.remove(cardNumber);
+            removeUserFromZipHashMap(cardToRemove);
             return true;
         }
         return false;
