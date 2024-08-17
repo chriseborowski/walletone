@@ -29,6 +29,20 @@ public class CardManager {
         return newCard;
     }
 
+    public void addUserToCard(String cardNumber, String fullName, String zipCode) {
+        Card card = findCardByNumber(cardNumber);
+
+        if (card != null) {
+            card.addCardUser(fullName, zipCode);
+            User newUser = new User(fullName, zipCode);
+            zipHashMap.computeIfAbsent(zipCode, k -> new ArrayList<>()).add(newUser);
+            System.out.println("New card user successfully added.");
+        }
+        else {
+            System.out.println("Card not found.");
+        }
+    }
+
     public boolean removeCard(String cardNumber) {
         Card cardToRemove = findCardByNumber(cardNumber);
         if (cardToRemove != null) {
