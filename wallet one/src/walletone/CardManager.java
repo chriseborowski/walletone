@@ -89,6 +89,10 @@ public class CardManager {
         return cards;
     }
 
+    public List<User> searchByName(String name) {
+        return nameHashMap.getOrDefault(name, new ArrayList<>());
+    }
+
     public List<User> searchByZip(String zipCode) {
         return zipHashMap.getOrDefault(zipCode, new ArrayList<>());
     }
