@@ -38,6 +38,7 @@ public class CardManager {
             card.addCardUser(fullName, zipCode);
             User newUser = new User(fullName, zipCode);
             zipHashMap.computeIfAbsent(zipCode, k -> new ArrayList<>()).add(newUser);
+            nameHashMap.computeIfAbsent(fullName, k -> new ArrayList<>()).add(newUser);
             System.out.println("New card user successfully added.");
         }
         else {
