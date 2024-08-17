@@ -133,6 +133,25 @@ public class WalletOneApp {
                     }
                     break;
                 case 9:
+                    System.out.println("You selected to search cards by name.\nEnter the full name you are looking for:");
+                    String fullName = scanner.nextLine();
+                    List<User> usersByName = cardManager.searchByName(fullName);
+
+                    if (usersByName.isEmpty()) {
+                        System.out.println("No card users found with name " + fullName);
+                    }
+                    else {
+                        System.out.println("Card users found with name " + fullName + ":");
+                        for (User user : usersByName) {
+                            for (Card searchCard : cardManager.getCards()) {
+                                if (searchCard.getCardUsers().contains(user.getName())) {
+                                    System.out.println("Card Number: " + searchCard.getCardNumber());
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 0:
                     System.out.println("Exiting now. Thank you for using Wallet One.");
                     return;
                 default:
