@@ -19,7 +19,11 @@ public class CardManager {
         newCard.generateCardNumber();
         newCard.addCardUser(fullName, zipCode);
         cards.add(newCard);
+
         cardHashMap.put(newCard.getCardNumber(), newCard);
+        User user = new User(fullName, zipCode);
+        zipHashMap.computeIfAbsent(zipCode, k -> new ArrayList<>()).add(user);
+
         System.out.println("Success! New credit card added.\nCard details:\n");
         newCard.showCardInfo();
         return newCard;
