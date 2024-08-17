@@ -77,7 +77,7 @@ public class WalletOneApp {
                         System.out.println("Enter another user's ZIP code: ");
                         String newZipCode = scanner.nextLine();
 
-                        cardForUser.addCardUser(newCardUser, newZipCode);
+                        cardManager.addUserToCard(cardNumberForUser, newCardUser, newZipCode);
                         cardForUser.showCardUsers();
                     }
                     else {
