@@ -21,7 +21,7 @@ public abstract class Account {
     }
 
     // Getters and setters
-    private String getFullName() {
+    String getFullName() {
         return fullName;
     }
 
