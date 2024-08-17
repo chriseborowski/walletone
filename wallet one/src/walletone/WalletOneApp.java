@@ -22,6 +22,7 @@ public class WalletOneApp {
                     "\n5. Show All Cards" +
                     "\n6. Remove Card" +
                     "\n7. Remove Card User" +
+                    "\n8. Search Cards By ZIP Code" +
                     "\n9. Exit");
             System.out.print("Your selection: ");
 
