@@ -56,8 +56,8 @@ public class CardManager {
         return cards;
     }
 
-    public List<List<User>> searchByZip(String zipCode) {
-        return zipHashMap.get(zipCode) != null ? List.of(zipHashMap.get(zipCode)) : new ArrayList<>();
+    public List<User> searchByZip(String zipCode) {
+        return zipHashMap.getOrDefault(zipCode, new ArrayList<>());
     }
 
 }
