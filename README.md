@@ -16,6 +16,8 @@ WalletOne is a robust Java-based virtual credit card management system designed 
 - **Constant-time Card Lookup**: Utilizes HashMap for O(1) card retrieval by card number
 - **Multi-key Indexing**: Implements separate HashMaps for zip code and name-based user lookups
 - **Memory-efficient User Storage**: Uses a shared User object across different indexes
+- **HashMap-based Card Storage**: 
+  The `CardManager` class uses a `HashMap<String, Card>` (cardHashMap) for O(1) card retrieval by card number.
 - **Scalable Architecture**: Designed to handle a large number of cards and users efficiently
 
 ## Installation
