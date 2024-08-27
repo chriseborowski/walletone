@@ -2,7 +2,7 @@
 
   <img src="wallet one/images/WalletOne-Virtual-Credit-Card-Management-System-Java-app-logo.jpg" alt="WalletOne: Virtual Credit Card Management System" title="WalletOne: Virtual Credit Card Management System" />
 
-WalletOne is a robust Java-based virtual credit card management system designed for efficient handling of card information, user data, and related operations, all in the command-line interface (CLI).
+WalletOne is a robust Java-based virtual credit card management system designed for efficient handling of card information, user data, and related operations, all in the command-line interface (CLI). For a detailed description and overview of its main functionalities, see this blog post: [Introducing WalletOne: An Interactive Java Backend App Featuring a Virtual Credit Card Management System](https://chriseborowski.notion.site/Introducing-WalletOne-An-Interactive-Java-Backend-App-Featuring-a-Virtual-Credit-Card-Management-Sy-ae31693fde4249f28a142ddda560f637).
 
 ## Key Features
 
